@@ -15,6 +15,7 @@ import { _404Component } from './errors/404/404.component';
 import { EventRouteActivatorService } from './event-route-activator.service';
 import { EventListResolverService } from './shared/event-list-resolver.service';
 import { CheckDirtyStateService } from './check-dirty-state.service';
+import { AuthService } from './user/auth.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CheckDirtyStateService } from './check-dirty-state.service';
     ToastrService, 
     EventRouteActivatorService,
     EventListResolverService,
-    CheckDirtyStateService
+    CheckDirtyStateService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
