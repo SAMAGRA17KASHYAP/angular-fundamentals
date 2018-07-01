@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ISession } from '../models/event.model';
 import { restrictedWords } from '../Shared/restricted-words.validator';
@@ -10,6 +10,8 @@ import { restrictedWords } from '../Shared/restricted-words.validator';
 })
 export class CreateSessionComponent implements OnInit {
 
+  @Output() saveNewSession =new EventEmitter();
+  @Output() cancelAddSession = new EventEmitter();
   newSessionForm:FormGroup;
   private name:FormControl;
   private presenter:FormControl;
@@ -45,6 +47,10 @@ export class CreateSessionComponent implements OnInit {
       abstract:formValues.abstract,
       voters:[]
     };
+    this.saveNewSession.emit(session);
   }
 
+  cancel(){
+    this.cancelAddSession.emit();
+  }
 }

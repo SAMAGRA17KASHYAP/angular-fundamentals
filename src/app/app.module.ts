@@ -18,6 +18,8 @@ import { CheckDirtyStateService } from './check-dirty-state.service';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './create-session/create-session.component';
+import { SessionsListComponent } from './sessions-list/sessions-list.component';
+import { CollapsibleWellComponent } from './Shared/collapsible-well/collapsible-well.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CreateSessionComponent } from './create-session/create-session.componen
     EventDetailsComponent,
     CreateEventComponent,
     _404Component,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionsListComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
