@@ -20,10 +20,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateSessionComponent } from './create-session/create-session.component';
 import { SessionsListComponent } from './sessions-list/sessions-list.component';
 import { CollapsibleWellComponent } from './Shared/collapsible-well/collapsible-well.component';
+import { DurationPipe } from './Shared/duration.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DurationPipe,
     EventsListComponent,
     EventThumbnailComponent,
     NavBarComponent,
