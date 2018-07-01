@@ -3,10 +3,6 @@ em{
     color: #E05C65;
 
 }
-.error input{
-    background-color: #E3C3C5;
-}
-
-.error textarea{
+error input{
     background-color: #E3C3C5;
 }
