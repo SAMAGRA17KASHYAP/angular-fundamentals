@@ -3,6 +3,7 @@ import { FormControl,FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { TOASTR_TOKEN} from '../../toastr.service';
+import { Toastr } from '../../models/toastr.interface';
 
 
 @Component({
@@ -50,10 +51,3 @@ export class ProfileComponent implements OnInit{
         return this.lastName.valid || this.lastName.untouched;
     }
 }
-
-export interface Toastr{
-    success(msg:string,title?:string);
-    info(msg:string,title?:string);
-    warning(msg:string,title?:string);
-    error(msg:string,title?:string); 
-  }

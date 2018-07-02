@@ -21,6 +21,12 @@ import { CreateSessionComponent } from './create-session/create-session.componen
 import { SessionsListComponent } from './sessions-list/sessions-list.component';
 import { CollapsibleWellComponent } from './Shared/collapsible-well/collapsible-well.component';
 import { DurationPipe } from './Shared/duration.pipe';
+import { SimpleModalComponent } from './Shared/simple-modal/simple-modal.component';
+import { ModelTriggerDirective } from './Shared/model-trigger.directive';
+import { JQ_TOKEN } from './Shared/jquery.service';
+
+let toastr:Toastr = window['toastr'];
+let jQuery = window['$'];
 
 @NgModule({
   declarations: [
@@ -34,7 +40,9 @@ import { DurationPipe } from './Shared/duration.pipe';
     _404Component,
     CreateSessionComponent,
     SessionsListComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    SimpleModalComponent,
+    ModelTriggerDirective
   ],
   imports: [
     BrowserModule,
@@ -51,12 +59,16 @@ import { DurationPipe } from './Shared/duration.pipe';
     {
       provide:TOASTR_TOKEN,
       useValue:toastr
+    },
+    {
+      provide:JQ_TOKEN,
+      useValue:jQuery
     }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-declare let toastr;
+
 export function checkDirtyState(component:CreateEventComponent){
   if(component.isDirty){
     return window.confirm("Are you sure you want to leave?");
