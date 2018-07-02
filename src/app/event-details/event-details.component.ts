@@ -12,7 +12,11 @@ export class EventDetailsComponent implements OnInit {
 
   event:any;
 
+  filterBy:string = 'all';
+
   addMode:boolean;
+
+  sortBy:string='name';
 
   constructor(private eventService:EventService,private router:ActivatedRoute) { }
 
@@ -35,5 +39,9 @@ export class EventDetailsComponent implements OnInit {
 
   cancel(){
     this.addMode =false;
+  }
+
+  filterByFunc(filterBy:string){
+    this.filterBy = filterBy;    
   }
 }
