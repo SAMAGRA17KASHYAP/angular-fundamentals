@@ -6,7 +6,7 @@ import { EventsListComponent } from './events-list/events-list.component';
 import { EventThumbnailComponent } from './event-thumbnail/event-thumbnail.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { EventService } from './Shared/event.service';
-import { ToastrService } from './toastr.service';
+import { TOASTR_TOKEN, Toastr } from './toastr.service';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import {appRoutes} from './routes';
 import {RouterModule} from '@angular/router';
@@ -44,15 +44,19 @@ import { DurationPipe } from './Shared/duration.pipe';
   ],
   providers: [
     EventService,
-    ToastrService, 
     EventRouteActivatorService,
     EventListResolverService,
     CheckDirtyStateService,
-    AuthService
+    AuthService,
+    {
+      provide:TOASTR_TOKEN,
+      useValue:toastr
+    }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+declare let toastr;
 export function checkDirtyState(component:CreateEventComponent){
   if(component.isDirty){
     return window.confirm("Are you sure you want to leave?");
