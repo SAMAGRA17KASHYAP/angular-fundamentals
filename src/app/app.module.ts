@@ -24,6 +24,8 @@ import { DurationPipe } from './Shared/duration.pipe';
 import { SimpleModalComponent } from './Shared/simple-modal/simple-modal.component';
 import { ModelTriggerDirective } from './Shared/model-trigger.directive';
 import { JQ_TOKEN } from './Shared/jquery.service';
+import { UpvoteComponent } from './upvote/upvote.component';
+import { VoterService } from './voter.service';
 
 let toastr:Toastr = window['toastr'];
 let jQuery = window['$'];
@@ -42,7 +44,8 @@ let jQuery = window['$'];
     SessionsListComponent,
     CollapsibleWellComponent,
     SimpleModalComponent,
-    ModelTriggerDirective
+    ModelTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
@@ -62,8 +65,9 @@ let jQuery = window['$'];
     },
     {
       provide:JQ_TOKEN,
-      useValue:jQuery
-    }
+      useValue:jQuery,
+    },
+    VoterService
   ],
   bootstrap: [AppComponent]
 })
