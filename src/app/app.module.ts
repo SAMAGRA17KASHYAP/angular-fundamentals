@@ -26,6 +26,7 @@ import { ModelTriggerDirective } from './Shared/model-trigger.directive';
 import { JQ_TOKEN } from './Shared/jquery.service';
 import { UpvoteComponent } from './upvote/upvote.component';
 import { VoterService } from './voter.service';
+import { ValidateLocationDirective } from './validate-location.directive';
 
 let toastr:Toastr = window['toastr'];
 let jQuery = window['$'];
@@ -45,7 +46,8 @@ let jQuery = window['$'];
     CollapsibleWellComponent,
     SimpleModalComponent,
     ModelTriggerDirective,
-    UpvoteComponent
+    UpvoteComponent,
+    ValidateLocationDirective
   ],
   imports: [
     BrowserModule,
