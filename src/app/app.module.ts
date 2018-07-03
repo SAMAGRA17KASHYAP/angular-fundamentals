@@ -27,6 +27,8 @@ import { JQ_TOKEN } from './Shared/jquery.service';
 import { UpvoteComponent } from './upvote/upvote.component';
 import { VoterService } from './voter.service';
 import { ValidateLocationDirective } from './validate-location.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { EventResolverService } from './event-resolver.service';
 
 let toastr:Toastr = window['toastr'];
 let jQuery = window['$'];
@@ -53,7 +55,8 @@ let jQuery = window['$'];
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     EventService,
@@ -69,7 +72,8 @@ let jQuery = window['$'];
       provide:JQ_TOKEN,
       useValue:jQuery,
     },
-    VoterService
+    VoterService,
+    EventResolverService
   ],
   bootstrap: [AppComponent]
 })
